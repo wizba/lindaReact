@@ -1,0 +1,37 @@
+.mybutton {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: all 500ms;
+  outline: none;
+}
+
+.outline {
+  border: solid 1px var(--orange);
+  color: var(--orange);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--orange-50);
+    color: var(--orange-500);
+    border: solid 1px var(--orange-500);
+    transform: scale(1.02);
+  }
+}
+
+.normal {
+  border: none;
+  color: var(--white);
+  background-color: var(--orange);
+
+  &:hover {
+    background-color: var(--orange-500);
+    transform: scale(1.02);
+  }
+}

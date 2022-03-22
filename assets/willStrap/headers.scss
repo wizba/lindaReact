@@ -1,0 +1,10 @@
+$base-color: #036;
+
+@for $i from 1 through 5 {
+   h#{$i} {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}

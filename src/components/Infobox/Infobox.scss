@@ -1,0 +1,113 @@
+
+@import "../../../assets/willStrap/themse.scss";
+@import "../../../assets/willStrap/grid.scss";
+@import "../../../assets/willStrap/flex.scss";
+
+
+@mixin centerAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infobox {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+
+  .headerstatus {
+    display: flex;
+    font-size: 12px;
+
+    &__left {
+      @include centerAll;
+      width: 90px;
+      height: 20px;
+      color: var(--white);
+      background-image: linear-gradient(
+        270deg,
+        var(--orange-500) 0%,
+        var(--orange) 100%
+      );
+      border-radius: 2px 0 0 2px;
+    }
+
+    &__center {
+      @include centerAll;
+      width: 4.7rem;
+      height: 1.26rem;
+      gap: 0.3rem;
+    }
+
+    &__right {
+      @include centerAll;
+      width: 106px;
+      height: 1.26rem;
+      gap: 0.3rem;
+      border-radius: 0 2px 2px 0;
+    }
+  }
+
+  .description {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px var(--gray-50);
+    border-bottom-color: var(--gray-50) !important;
+    gap: 1rem;
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.1rem;
+      margin: 0 0.2rem;
+      cursor: alias;
+      background-color: var(--gray-50);
+    }
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      color: var(--orange);
+      font-size: 0.8rem;
+      gap: 0.4rem;
+
+      .buyers {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.logo {
+  width: 76px;
+  height: 40px;
+}
+
+.shipping__discount{
+  font-size:14px
+}
+
+.option-line{
+  border-bottom: solid 1px var(--gray-50);
+    border-bottom-color: var(--gray-50) !important;
+}
+
+.r-78-50-r-895-31 {
+  color: #FF6600;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.Options-regular-text{
+  color: #999999;
+}
+.option-regular-size{
+  font-size: 14px;
+}
+
+.cancel{
+  text-decoration: line-through;
+}

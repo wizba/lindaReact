@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// Set default for all elements
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// General CSS variables
+:root {
+  --white: #ffffff;
+  --orange: #ff6600;
+  --orange-50: #fff0e6;
+  --orange-500: #f5515f;
+  --gray: #333333;
+  --gray-50: #edf0f3;
+  --gray-100: #999999;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+// CSS utilities to be use
+.text-mute {
+  color: var(--gray-100);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.text-gray {
+  color: var(--gray);
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+
+.bg-orange-50 {
+  background-color: var(--orange-50);
+}
+
+.bg-gray-50 {
+  background-color: var(--gray-50);
+}

@@ -1,0 +1,11 @@
+@import '../willStrap/variable';
+@import '../willStrap/mixins';
+
+:root .light {
+    @include spread-map($theme-map-light);
+
+    
+}
+:root .dark {
+    @include spread-map($theme-map-dark);
+}
