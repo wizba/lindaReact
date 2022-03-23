@@ -4,6 +4,7 @@ import Description from './Description'
 import Shipping from './Shipping'
 import Options from './Options'
 import Discount from './Discount'
+import OptionsCalc from './OptionsCalc'
 
 const Infobox = ({product}) => {
   // destructure product
@@ -16,6 +17,7 @@ const Infobox = ({product}) => {
       <Options options={options}/>
       <Shipping/>
       <Discount discount ={discount}/>
+      <OptionsCalc options={options}/>
     </div>
   )
 }

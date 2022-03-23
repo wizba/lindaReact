@@ -111,3 +111,26 @@
 .cancel{
   text-decoration: line-through;
 }
+
+.__foreground {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #FF6600;
+  border-radius: 0 2px 2px 0;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+.__foreground2 {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #E6E7EB;
+  border-radius: 2px 0 0 2px;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+
+}
+
+.border-rl{
+  border-right: none;
+  border-left: none;
+}

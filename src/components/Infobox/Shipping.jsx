@@ -17,7 +17,7 @@ export default Shipping;
 
 const Point =()=>{
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" fill="currentColor" className="bi bi-circle-fill" viewBox="0 0 16 16">
   <circle cx="8" cy="8" r="8"/>
 </svg>
   )
