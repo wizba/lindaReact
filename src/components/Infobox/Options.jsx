@@ -8,7 +8,6 @@ function Options(props) {
     const [$minValue,setMinValue] =useState({symbol:'',value:0});
 
     useEffect(() => {
-        console.log('options', options)
         let _1080p_price=options['1080p']?.price?.value;
         let _1080p_symbol= options['1080p'].price.currency.symbol;
         setMax({symbol: _1080p_symbol,value:_1080p_price});

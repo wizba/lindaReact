@@ -9,7 +9,6 @@ import OptionsCalc from './OptionsCalc'
 const Infobox = ({product}) => {
   // destructure product
   const {discount, gallery, name, options, reviews, shipping, tags} = product
-  console.log({discount, gallery, name, options, reviews, shipping, tags})
   return (
     <div className="infobox">
       <HeaderStatus shippingProps={shipping.props} />

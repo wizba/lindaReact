@@ -16,7 +16,6 @@ const ProductDetail = () => {
       const response = await fetch(`https://fe-assignment.vaimo.net`)
       const {product} = await response.json()
       setProduct(product)
-      console.log('the product is ',product);
     }
     fetchApi()
   }, [])

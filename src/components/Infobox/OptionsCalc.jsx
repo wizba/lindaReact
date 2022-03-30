@@ -103,7 +103,7 @@ function OptionsCalc({options}) {
                 <div style={{width:'70%'}}> 
                 { optionsArr.map((option,index) =>{ 
                     return (
-                <div className='flex-container space-between' style={{width:'100%'}}>
+                <div className='flex-container space-between' key={option + index} style={{width:'100%'}}>
                     <div className="flex-container space-between align-items-center" style={{width:'60%'}} >
                         <span >{$options[option].label}</span>
                         <span>{$options[option].price.currency.symbol} {$options[option].price.value.toFixed(2)}</span>
