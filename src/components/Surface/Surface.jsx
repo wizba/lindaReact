@@ -1,9 +1,12 @@
 import {BsExclamationCircle, BsEnvelope} from 'react-icons/bs'
-
-import './Surface.scss'
+import React from 'react';
+import './Surface.scss';
 import MyButton from '../MyButton/MyButton'
+import { shareContext } from '../../shareData/shareData'
 
 const Surface = ({shipping}) => {
+  
+  const {totalPrice,setTotalPrice} = React.useContext(shareContext);
   return (
     <div className="surface">
       <div className="surface__heading">
@@ -17,9 +20,8 @@ const Surface = ({shipping}) => {
         <span className="right">
           {shipping.method.cost.currency.symbol +
             ' ' +
-            shipping.method.cost.value
-              .toFixed(2)
-              .replace(/\d(?=(\d{3})+\.)/g, '$&,')}
+            totalPrice? totalPrice.toFixed(2)
+            .replace(/\d(?=(\d{3})+\.)/g, '$&,'):0.00}
         </span>
       </div>
 

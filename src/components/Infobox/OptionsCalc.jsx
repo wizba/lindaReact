@@ -1,4 +1,5 @@
 import React,{useEffect,useState} from 'react'
+import { shareContext } from '../../shareData/shareData';
 
 function OptionsCalc({options}) {
     const [optionsArr,setOptionsAray] =useState([]);
@@ -7,6 +8,9 @@ function OptionsCalc({options}) {
     const [increments,setIncrements] =useState([]);
 
     const [inrementing,setIncrementing] =useState([]);
+    const [total,setTotal] = useState(0);
+    const [selected,setSelected] = useState({option:'',index:0});
+    const {totalPrice,setTotalPrice} = React.useContext(shareContext);
 
     useEffect(() => {
        
@@ -33,11 +37,13 @@ function OptionsCalc({options}) {
 
     },[]);
 
+  
+
     const addToCart = (option,index)=>{
         let currentCost = $options[option].price.value;
         
-
-        currentCost = currentCost + increments[index];
+        let multi = countItem[index] === 0 ? 0 : 1;
+        currentCost = currentCost + multi*increments[index];
         let newOptions = {...$options};
         newOptions[option].price.value = currentCost;
         let newCount = [...countItem];
@@ -47,6 +53,10 @@ function OptionsCalc({options}) {
         let newIncrementing = [...inrementing];
         newIncrementing[index] = true;
         setIncrementing([...newIncrementing])
+
+        
+        calculateTotal(increments[index],1);
+       
     }
 
     const removeFromCart = (option,index)=>{
@@ -54,6 +64,9 @@ function OptionsCalc({options}) {
        
 
         currentCost = currentCost - increments[index];
+        if(currentCost < increments[index]){
+            currentCost = increments[index];
+        }
         let newOptions = {...$options};
         newOptions[option].price.value = currentCost;
         let newCount = [...countItem];
@@ -67,7 +80,21 @@ function OptionsCalc({options}) {
         newIncrementing[index] = false;
 
         setIncrementing([...newIncrementing])
+
+        setSelected({option,index});
+        calculateTotal(increments[index],-1);
     }
+  
+    const calculateTotal = (amount,multiplier)=>{
+        let $total = totalPrice;
+        $total = $total + multiplier*amount;
+        if($total < 0){
+            $total = 0;
+        }
+        setTotalPrice($total);
+
+    }
+   
   return (<>  
                 <div className='flex-container'>
                 <div style={{width:'30%'}} className="mt-2">
@@ -100,4 +127,4 @@ function OptionsCalc({options}) {
   )
 }
 
-export default OptionsCalc
+export default OptionsCalc;
